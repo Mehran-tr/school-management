@@ -15,6 +15,7 @@ use App\Http\Controllers\Backend\Setup\SchoolSubjectController;
 use App\Http\Controllers\Backend\Setup\AssignSubjectController;
 use App\Http\Controllers\Backend\Setup\DesignationController;
 use App\Http\Controllers\Backend\Student\StudentRegController;
+use App\Http\Controllers\Backend\Student\StudentRoleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -174,5 +175,11 @@ Route::prefix('students')->group(function () {
     Route::post('/reg/update/{student_id}', [StudentRegController::class, 'studentRegUpdate'])->name('update.student.registration');
     Route::get('/reg/promotion/{student_id}', [StudentRegController::class, 'studentRegPromotion'])->name('student.registration.promotion');
     Route::post('/reg/update/promotion/{student_id}', [StudentRegController::class, 'studentUpdatePromotion'])->name('promotion.student.registration');
+    Route::get('/student/reg/detail/{student_id}', [StudentRegController::class, 'studentRegDetails'])->name('student.registration.detail');
 
+
+    //Role Generator
+    Route::get('/role/generate/view', [StudentRoleController::class, 'studentRoleView'])->name('role.generate.view');
+    Route::get('/reg/getstudents', [StudentRoleController::class, 'getStudents'])->name('student.registration.getstudents');
+    Route::post('roll/generate/store', [StudentRoleController::class, 'studentRoleStore'])->name('roll.generate.store');
 });

@@ -117,7 +117,7 @@
                                                 <td>
                                                     <a href="{{route('student.registration.edit',$value->student_id)}}" class="btn btn-info">Edit</a>
                                                     <a href="{{route('student.registration.promotion',$value->student_id)}}" class="btn btn-danger" >Promotion</a>
-                                                    <a href="{{route('student.registration.promotion',$value->student_id)}}" class="btn btn-danger" >Details</a>
+                                                    <a target="_blank" href="{{route('student.registration.detail',$value->student_id)}}" class="btn btn-danger" >Details</a>
                                                 </td>
                                             </tr>
                                         @endforeach
