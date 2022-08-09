@@ -16,6 +16,7 @@ use App\Http\Controllers\Backend\Setup\AssignSubjectController;
 use App\Http\Controllers\Backend\Setup\DesignationController;
 use App\Http\Controllers\Backend\Student\StudentRegController;
 use App\Http\Controllers\Backend\Student\StudentRoleController;
+use App\Http\Controllers\Backend\Student\RegistrationFeeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -182,4 +183,12 @@ Route::prefix('students')->group(function () {
     Route::get('/role/generate/view', [StudentRoleController::class, 'studentRoleView'])->name('role.generate.view');
     Route::get('/reg/getstudents', [StudentRoleController::class, 'getStudents'])->name('student.registration.getstudents');
     Route::post('roll/generate/store', [StudentRoleController::class, 'studentRoleStore'])->name('roll.generate.store');
+
+
+    //Registration Fee route
+    Route::get('reg/fee/view', [RegistrationFeeController::class, 'regFeeView'])->name('registration.fee.view');
+
+
+    Route::get('reg/fee/classwisedata', [RegistrationFeeController::class, 'regFeeClassWiseData'])->name('student.registration.fee.classwise.get');
+    Route::get('reg/fee/payslip', [RegistrationFeeController::class, 'regFeePayslip'])->name('student.registration.fee.payslip');
 });
